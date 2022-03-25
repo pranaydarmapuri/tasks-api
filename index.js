@@ -3,6 +3,8 @@ const mongoose = require("mongoose")
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
 const cors = require('cors')
+
+require('dotenv').config()
 const env = require('./utils/env')
 
 // mongoose connection
