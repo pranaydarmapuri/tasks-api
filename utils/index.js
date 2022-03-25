@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt')
 const User = require('../models/user.schema')
 const env = require('./env')
 const constants = require('./constants')
+require('dotenv').config()
 
 module.exports = {
   // setting Access Token cookie
