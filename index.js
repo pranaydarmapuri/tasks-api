@@ -37,7 +37,7 @@ app.use('/todos', require('./middlewares/is-authenticated'), require('./routes/t
 app.use('/auth', require('./routes/auth.routes'))
 
 //PORT
-const port = env.PORT
+const port = env.PORT || 5000
 const server = app.listen(port, () => console.log('Connected to port', port))
 
 // 404 ERROR
