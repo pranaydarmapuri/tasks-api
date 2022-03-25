@@ -40,6 +40,17 @@ app.use('/auth', require('./routes/auth.routes'))
 const port = env.PORT || 5000
 const server = app.listen(port, () => console.log('Connected to port', port))
 
+
+// Server code
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('__client/build'))
+
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, '_client', 'index.html'))
+  })
+}
+// Server Code end
+
 // 404 ERROR
 app.use((req, res, next) => {
   next(res.status(400).json({ message: "Page Not Found", code: 404 }));
