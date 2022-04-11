@@ -32,8 +32,8 @@ app.use(cookieParser())
 // init cors
 app.use(cors())
 
-//routes
-app.use('/todos', require('./middlewares/is-authenticated'), require('./routes/todo.routes'))
+//routes require('./middlewares/is-authenticated'),
+app.use('/todos', require('./routes/todo.routes'))
 app.use('/auth', require('./routes/auth.routes'))
 
 //PORT

@@ -12,4 +12,4 @@ module.exports = {
 }
 
 // generating secret
-// require('crypto').randomBytes(126).toString('hex')
+// require('crypto').randomBytes(64).toString('hex')

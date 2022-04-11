@@ -4,12 +4,14 @@ module.exports = {
   addTodo: async (req, res) => {
    
     try {
-      const { todo } = req.body
+      const { todo, num } = req.body
 
       if(!todo)
         return res.status(400).json({ message: "Empty todo can't be added" })
   
-      Todo.create({title: todo}, async (error, data) => {
+      Todo.create({ title: todo, num: num }, async (error, data) => {
+
+        console.log(error, data)
   
         if(!!error)
           return res.status(500).json({ message: 'Something went wrong while adding todo'})
@@ -17,6 +19,7 @@ module.exports = {
         return res.status(201).json({ message: 'Added todo'})
       })
     } catch (error) {
+      console.log(error)
       return res.status(500).json({ message: 'Something went wrong while adding todo'})
     }
    

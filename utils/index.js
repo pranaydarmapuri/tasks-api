@@ -9,7 +9,7 @@ module.exports = {
   setAccessTokenInCookie: ({token, res}) => res.cookie(
     constants.ACCESS_TOKEN, 
     token, 
-    { httpOnly: true, maxAge: 1000 * 60 * 15, secure: env.NODE_ENV === 'production'}
+    { httpOnly: true, maxAge: 1000 * 60 * 15, secure: env.NODE_ENV === 'production', }
   ),
   // generate Access Token
   generateAccessToken: ({ user }) => jwt.sign(

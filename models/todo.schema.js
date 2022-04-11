@@ -4,7 +4,7 @@ const todoSchema = mongoose.Schema({
   userId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
-    required: [true, 'User for todo is required.']
+    // required: [true, 'User for todo is required.']
   },
   title: {
     type: String,
@@ -13,6 +13,9 @@ const todoSchema = mongoose.Schema({
   isDone: {
     type: Boolean,
     default: false
+  },
+  num: {
+    type: Number
   }
 }, {
   collection: 'todos',
